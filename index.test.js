@@ -94,17 +94,17 @@ describe('[Exercise 5] Seasons', () => {
   })
   it('[12] the FOURTH call of seasons.next returns "spring"', () => {
     // ✨ test away
-    [...Array(4).keys()].forEach(num => seasons.next())
+    [...Array(4).keys()].forEach(() => seasons.next())
     expect(seasons).toEqual("spring")
   })
   it('[13] the FIFTH call of seasons.next returns again "summer"', () => {
     // ✨ test away
-    [...Array(5).keys()].forEach(num => seasons.next())
+    [...Array(5).keys()].forEach(() => seasons.next())
     expect(seasons).toEqual("summer")
   })
   it('[14] the 40th call of seasons.next returns "spring"', () => {
     // ✨ test away
-    [...Array(40).keys()].forEach(num => seasons.next())
+    [...Array(40).keys()].forEach(() => seasons.next())
     expect(seasons).toEqual("spring")
   })
 })
@@ -116,21 +116,30 @@ describe('[Exercise 6] Car', () => {
   })
   it('[15] driving the car returns the updated odometer', () => {
     // ✨ test away
+    expect(focus.drive(100)).toBe(100)
+    expect(focus.drive(50)).toBe(150)
   })
   it('[16] driving the car uses gas', () => {
     // ✨ test away
+    expect(focus.drive(700)).toBe(600)
   })
   it('[17] refueling allows to keep driving', () => {
     // ✨ test away
+    focus.drive(600)
+    focus.refuel(20)
+    expect(focus.drive(100)).toBe(700)
   })
   it('[18] adding fuel to a full tank has no effect', () => {
     // ✨ test away
+    focus.refuel(10).toBe(600)
   })
 })
 
 describe('[Exercise 7] isEvenNumberAsync', () => {
   it('[19] resolves true if passed an even number', () => {
     // ✨ test away
+    utils.isEvenNumberAsync(2)
+    .then(res => expect(res).toBe(true))
   })
   it('[20] resolves false if passed an odd number', () => {
     // ✨ test away
