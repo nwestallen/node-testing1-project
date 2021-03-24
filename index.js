@@ -79,6 +79,8 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.seasonList = ['spring', 'summer', 'fall', 'winter'],
+    this.seasonKey = 0
   }
 
   /**
@@ -95,6 +97,8 @@ class Seasons {
    */
   next() {
     // ✨ implement
+    this.seasonKey = (this.seasonKey + 1) % 4
+    return this.seasonList[this.seasonKey]
   }
 }
 
