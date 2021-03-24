@@ -115,7 +115,8 @@ describe('[Exercise 6] Car', () => {
   })
   it('[16] driving the car uses gas', () => {
     // ✨ test away
-    expect(focus.drive(700)).toBe(600)
+    focus.drive(600)
+    expect(focus.drive(100)).toBe(600)
   })
   it('[17] refueling allows to keep driving', () => {
     // ✨ test away
@@ -125,7 +126,7 @@ describe('[Exercise 6] Car', () => {
   })
   it('[18] adding fuel to a full tank has no effect', () => {
     // ✨ test away
-    focus.refuel(10).toBe(600)
+    expect(focus.refuel(1000)).toBe(600)
   })
 })
 
