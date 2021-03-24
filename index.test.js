@@ -143,11 +143,17 @@ describe('[Exercise 7] isEvenNumberAsync', () => {
   })
   it('[20] resolves false if passed an odd number', () => {
     // ✨ test away
+    utils.isEvenNumberAsync(3)
+    .then(res => expect(res).toBe(false))
   })
   it('[21] rejects an error with the message "number must be a number" if passed a non-number type', () => {
     // ✨ test away
+    utils.isEvenNumberAsync('Frog')
+    .catch(err => expect(err).toBe('number must be a number'))
   })
   it('[22] rejects an error with the message "number must be a number" if passed NaN', () => {
     // ✨ test away
+    utils.isEvenNumberAsync(NaN)
+    .catch(err => expect(err).toBe('number must be a number'))
   })
 })
