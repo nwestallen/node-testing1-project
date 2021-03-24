@@ -76,21 +76,36 @@ describe('[Exercise 5] Seasons', () => {
   })
   it('[9] the FIRST call of seasons.next returns "summer"', () => {
     // ✨ test away
+    seasons.next()
+    expect(seasons).toEqual("summer")
   })
   it('[10] the SECOND call of seasons.next returns "fall"', () => {
     // ✨ test away
+    seasons.next()
+    seasons.next()
+    expect(seasons).toEqual("fall")
   })
   it('[11] the THIRD call of seasons.next returns "winter"', () => {
     // ✨ test away
+    seasons.next()
+    seasons.next()
+    seasons.next()
+    expect(seasons).toEqual("winter")
   })
   it('[12] the FOURTH call of seasons.next returns "spring"', () => {
     // ✨ test away
+    [...Array(4).keys()].forEach(num => seasons.next())
+    expect(seasons).toEqual("spring")
   })
   it('[13] the FIFTH call of seasons.next returns again "summer"', () => {
     // ✨ test away
+    [...Array(5).keys()].forEach(num => seasons.next())
+    expect(seasons).toEqual("summer")
   })
   it('[14] the 40th call of seasons.next returns "spring"', () => {
     // ✨ test away
+    [...Array(40).keys()].forEach(num => seasons.next())
+    expect(seasons).toEqual("spring")
   })
 })
 
